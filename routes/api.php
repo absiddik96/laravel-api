@@ -10,3 +10,16 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+// Buyer
+Route::apiResource('buyers', 'Buyer\BuyerController')->only(['index','show']);
+// Category
+Route::apiResource('categories', 'Category\CategoryController');
+// Product
+Route::apiResource('products', 'Product\ProductController')->only(['index','show']);
+// Seller
+Route::apiResource('sellers', 'Seller\SellerController')->only(['index','show']);
+// Transaction
+Route::apiResource('transactions', 'Transaction\TransactionController')->only(['index','show']);
+// User
+Route::apiResource('users', 'User\UserController');
