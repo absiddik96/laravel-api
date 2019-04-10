@@ -7,7 +7,7 @@ use App\Scopes\BuyerScope;
 
 class Buyer extends User
 {
-    public static function boot()
+    protected static function boot()
     {
         parent::boot();
         static::addGlobalScope(new BuyerScope);

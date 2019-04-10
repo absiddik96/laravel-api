@@ -56,7 +56,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if ($exception instanceof ModelNotFoundException) {
-            return $this->errorResponse('Sorry, the model page you are looking for could not be found.', 404);
+            return $this->errorResponse('Sorry, the page you are looking for could not be found.', 404);
         }
 
         if ($exception instanceof AuthenticationException) {
@@ -68,7 +68,7 @@ class Handler extends ExceptionHandler
         }
 
         if ($exception instanceof MethodNotAllowedHttpException) {
-            return $this->errorResponse('Sorry, the method page you are looking for could not be found.', 405);
+            return $this->errorResponse('Sorry, the page you are looking for could not be found.', 405);
         }
 
         if ($exception instanceof HttpException) {
