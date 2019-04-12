@@ -13,6 +13,12 @@
 
 // Buyer
 Route::apiResource('buyers', 'Buyer\BuyerController')->only(['index','show']);
+
+Route::apiResource('buyers.categories', 'Buyer\BuyerCategoryController')->only(['index']);
+Route::apiResource('buyers.products', 'Buyer\BuyerProductController')->only(['index']);
+Route::apiResource('buyers.sellers', 'Buyer\BuyerSellerController')->only(['index']);
+Route::apiResource('buyers.transactions', 'Buyer\BuyerTransactionController')->only(['index']);
+
 // Category
 Route::apiResource('categories', 'Category\CategoryController');
 // Product
