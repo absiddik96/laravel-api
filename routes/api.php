@@ -31,6 +31,10 @@ Route::apiResource('categories.transactions', 'Category\CategoryTransactionContr
 Route::apiResource('products', 'Product\ProductController')->only(['index','show']);
 // Seller
 Route::apiResource('sellers', 'Seller\SellerController')->only(['index','show']);
+Route::apiResource('sellers.buyers', 'Seller\SellerBuyerController')->only(['index']);
+Route::apiResource('sellers.categories', 'Seller\SellerCategoryController')->only(['index']);
+Route::apiResource('sellers.products', 'Seller\SellerProductController')->except(['show']);
+Route::apiResource('sellers.transactions', 'Seller\SellerTransactionController')->only(['index']);
 // Transaction
 Route::apiResource('transactions', 'Transaction\TransactionController')->only(['index','show']);
 Route::apiResource('transactions.categories', 'Transaction\TransactionCategoryController')->only(['index']);
