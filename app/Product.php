@@ -33,4 +33,16 @@ class Product extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::updated(function($product){
+            if($product->quantity == 0 && $product->isAvailable()){
+                $product->status = self::UNAVAILABLE_PRODUCT;
+                $product->save();
+            }
+        });
+    }
 }
